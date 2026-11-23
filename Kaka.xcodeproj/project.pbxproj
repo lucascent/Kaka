@@ -1,0 +1,611 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		023DB017A1FFD1AB97961364 /* READMEExamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC3C5A00A0227A78AC1F5D1 /* READMEExamples.swift */; };
+		0D7C191F3BFEDC7D3CF7C373 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4083E2090E3D0A42FD718BA9 /* Theme.swift */; };
+		1216F0AF9136C4C7A49041A2 /* Support.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A91C1D8D64A56210275923 /* Support.swift */; };
+		15470EB72CB064C9241673ED /* ResultCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5030C4C7BE3FF4609A2F7BA /* ResultCard.swift */; };
+		389F1AA3ABE0CBE181FE4B77 /* CancellableContinuationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22B3B67981FDD31C88EB76F /* CancellableContinuationTests.swift */; };
+		39E658475EF10840E4E91DBC /* PhotoLibraryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00320414EC48D1D1286AD741 /* PhotoLibraryService.swift */; };
+		59692AC53F140510A39D1375 /* LegalContent.json in Resources */ = {isa = PBXBuildFile; fileRef = 9E782E045804A283E39A9DBA /* LegalContent.json */; };
+		5A802314D12EB4A3B7A3B9BF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E38EF2EA18A90995F14D8C /* HomeView.swift */; };
+		5DB954CAC9637086A34A36B5 /* StitchWorkflow in Frameworks */ = {isa = PBXBuildFile; productRef = A54CBA8B629C3B8C72DDC067 /* StitchWorkflow */; };
+		61E5DDF46EB83AD9FD03CF7F /* ResultActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A930048899CB5B003FA1E9A6 /* ResultActions.swift */; };
+		63BD160E2F2EB043D2A5B44B /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 2C598D39871453B250D343A2 /* PrivacyInfo.xcprivacy */; };
+		68231E4FB823F0C0DF2F724D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70C97EF717BFD20AD8D4A80F /* Assets.xcassets */; };
+		6C59443C6DB697835D8CD85A /* LongImageViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB16DE01CE5C0111D56AEB30 /* LongImageViewer.swift */; };
+		7495EB8D057B1EDA99B5BC2E /* KakaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C042B803D945282C2ED1F6 /* KakaApp.swift */; };
+		787C0746A333A124118FEE52 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5632BD3C65FEEED4A2982DA /* SettingsView.swift */; };
+		792AFBAA0FBE0D0B793457C4 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 066FFB4AFB808ADC653E9C6D /* Localizable.xcstrings */; };
+		7B298A173374C45D447FF2C7 /* JunctionEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BFF6A0C8699641901A0DE6 /* JunctionEditor.swift */; };
+		81C23A8D753222F4E03F7ED1 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 8811EC23934AB9EC4859499C /* LICENSE */; };
+		8BD103CAD916D03A4CE47235 /* CancellableContinuation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955E83D84F9E1B3D37AC4937 /* CancellableContinuation.swift */; };
+		A0D2700D587589BF6FBBC5AD /* THIRD_PARTY_NOTICES.md in Resources */ = {isa = PBXBuildFile; fileRef = 9205AC84233003E2DB12392F /* THIRD_PARTY_NOTICES.md */; };
+		AB6EA1654C976FB95CBCEBA0 /* ImageImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8A6DF4CBC3F5AE6CF065C8 /* ImageImporter.swift */; };
+		AE2DCA061E90C2D94C991971 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B2180298456159428F38D7 /* AboutView.swift */; };
+		B42C4DBAD31BBFAE83E65010 /* ImageImporterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A099A421D5D24EEC756F01D /* ImageImporterTests.swift */; };
+		BBBF41F40DA90B76E5C688B4 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 3683B94E1CA6411038B4323C /* InfoPlist.xcstrings */; };
+		C425028369C3EA8F0F68F724 /* ExportShareItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A3C6BFC937E5F099EC48AA /* ExportShareItem.swift */; };
+		CAF12DF97D0AF7021417BDE7 /* Fixtures in Resources */ = {isa = PBXBuildFile; fileRef = BD44766BD557FFFB81E0538F /* Fixtures */; };
+		DBB316F65FE30DFFDF73DC3C /* DemoPhotoLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3C5C282F0452C72953A6E3 /* DemoPhotoLibrary.swift */; };
+		EED265F53FE6CC278D368325 /* EditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48D297A5E0B4B654DFAE055 /* EditorView.swift */; };
+		F1D27E8E3E08ACE6FC3C43E9 /* CropSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988F2D6B92EFEBBD039AAC8B /* CropSheet.swift */; };
+		F7688375163457E98721546C /* StitchCore in Frameworks */ = {isa = PBXBuildFile; productRef = 9BC10D3B847AF472C1D87739 /* StitchCore */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D511C7F25C1B630183C00465 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 167255D7B2BDD55C92A3A751 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EFFCD9288AA2B416FD17A99D;
+			remoteInfo = Kaka;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		00320414EC48D1D1286AD741 /* PhotoLibraryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibraryService.swift; sourceTree = "<group>"; };
+		066FFB4AFB808ADC653E9C6D /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		24A3C6BFC937E5F099EC48AA /* ExportShareItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportShareItem.swift; sourceTree = "<group>"; };
+		2C598D39871453B250D343A2 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		3683B94E1CA6411038B4323C /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
+		38A5FCDFDCA8315DBAF2C0FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		4083E2090E3D0A42FD718BA9 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		57C042B803D945282C2ED1F6 /* KakaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaApp.swift; sourceTree = "<group>"; };
+		70C97EF717BFD20AD8D4A80F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7FC3C5A00A0227A78AC1F5D1 /* READMEExamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = READMEExamples.swift; sourceTree = "<group>"; };
+		86E38EF2EA18A90995F14D8C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		8811EC23934AB9EC4859499C /* LICENSE */ = {isa = PBXFileReference; path = LICENSE; sourceTree = "<group>"; };
+		8A099A421D5D24EEC756F01D /* ImageImporterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageImporterTests.swift; sourceTree = "<group>"; };
+		9205AC84233003E2DB12392F /* THIRD_PARTY_NOTICES.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = THIRD_PARTY_NOTICES.md; sourceTree = "<group>"; };
+		955E83D84F9E1B3D37AC4937 /* CancellableContinuation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancellableContinuation.swift; sourceTree = "<group>"; };
+		988F2D6B92EFEBBD039AAC8B /* CropSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CropSheet.swift; sourceTree = "<group>"; };
+		9E782E045804A283E39A9DBA /* LegalContent.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = LegalContent.json; sourceTree = "<group>"; };
+		A6A91C1D8D64A56210275923 /* Support.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Support.swift; sourceTree = "<group>"; };
+		A930048899CB5B003FA1E9A6 /* ResultActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultActions.swift; sourceTree = "<group>"; };
+		BB16DE01CE5C0111D56AEB30 /* LongImageViewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongImageViewer.swift; sourceTree = "<group>"; };
+		BD44766BD557FFFB81E0538F /* Fixtures */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fixtures; sourceTree = SOURCE_ROOT; };
+		C22B3B67981FDD31C88EB76F /* CancellableContinuationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancellableContinuationTests.swift; sourceTree = "<group>"; };
+		C48D297A5E0B4B654DFAE055 /* EditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorView.swift; sourceTree = "<group>"; };
+		C5632BD3C65FEEED4A2982DA /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		CCBD757929215F30D1FE0EAF /* KakaTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = KakaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5030C4C7BE3FF4609A2F7BA /* ResultCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCard.swift; sourceTree = "<group>"; };
+		DB8A6DF4CBC3F5AE6CF065C8 /* ImageImporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageImporter.swift; sourceTree = "<group>"; };
+		DE3C5C282F0452C72953A6E3 /* DemoPhotoLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoPhotoLibrary.swift; sourceTree = "<group>"; };
+		E94C51718C662EAE17121F88 /* Kaka.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Kaka.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0B2180298456159428F38D7 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		F5BFF6A0C8699641901A0DE6 /* JunctionEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JunctionEditor.swift; sourceTree = "<group>"; };
+		F76419AE841B6327A20F5FD9 /* StitchCore */ = {isa = PBXFileReference; lastKnownFileType = folder; name = StitchCore; path = StitchCore; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		192186AD4F192BCDE2BDBEAA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7688375163457E98721546C /* StitchCore in Frameworks */,
+				5DB954CAC9637086A34A36B5 /* StitchWorkflow in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		07F9D76A59C7C16DAC7F03D5 = {
+			isa = PBXGroup;
+			children = (
+				BD44766BD557FFFB81E0538F /* Fixtures */,
+				8811EC23934AB9EC4859499C /* LICENSE */,
+				9205AC84233003E2DB12392F /* THIRD_PARTY_NOTICES.md */,
+				5485A088FDFCECCFC9716A40 /* Kaka */,
+				3F1EBB587877C315724D203F /* KakaTests */,
+				2ADDC50ED53D48EA207F2E61 /* Packages */,
+				EBF7C2AB094126114C47B01E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2ADDC50ED53D48EA207F2E61 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				F76419AE841B6327A20F5FD9 /* StitchCore */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		3F1EBB587877C315724D203F /* KakaTests */ = {
+			isa = PBXGroup;
+			children = (
+				C22B3B67981FDD31C88EB76F /* CancellableContinuationTests.swift */,
+				8A099A421D5D24EEC756F01D /* ImageImporterTests.swift */,
+				7FC3C5A00A0227A78AC1F5D1 /* READMEExamples.swift */,
+			);
+			path = KakaTests;
+			sourceTree = "<group>";
+		};
+		44EEA3B473D829906D742147 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				F0B2180298456159428F38D7 /* AboutView.swift */,
+				988F2D6B92EFEBBD039AAC8B /* CropSheet.swift */,
+				DE3C5C282F0452C72953A6E3 /* DemoPhotoLibrary.swift */,
+				C48D297A5E0B4B654DFAE055 /* EditorView.swift */,
+				86E38EF2EA18A90995F14D8C /* HomeView.swift */,
+				F5BFF6A0C8699641901A0DE6 /* JunctionEditor.swift */,
+				BB16DE01CE5C0111D56AEB30 /* LongImageViewer.swift */,
+				A930048899CB5B003FA1E9A6 /* ResultActions.swift */,
+				D5030C4C7BE3FF4609A2F7BA /* ResultCard.swift */,
+				C5632BD3C65FEEED4A2982DA /* SettingsView.swift */,
+				A6A91C1D8D64A56210275923 /* Support.swift */,
+				4083E2090E3D0A42FD718BA9 /* Theme.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		5485A088FDFCECCFC9716A40 /* Kaka */ = {
+			isa = PBXGroup;
+			children = (
+				70C97EF717BFD20AD8D4A80F /* Assets.xcassets */,
+				38A5FCDFDCA8315DBAF2C0FE /* Info.plist */,
+				3683B94E1CA6411038B4323C /* InfoPlist.xcstrings */,
+				9E782E045804A283E39A9DBA /* LegalContent.json */,
+				066FFB4AFB808ADC653E9C6D /* Localizable.xcstrings */,
+				2C598D39871453B250D343A2 /* PrivacyInfo.xcprivacy */,
+				83817C97C84530173986E1FE /* App */,
+				F91290864358CC44EB6EB8EF /* Services */,
+				44EEA3B473D829906D742147 /* UI */,
+			);
+			path = Kaka;
+			sourceTree = "<group>";
+		};
+		83817C97C84530173986E1FE /* App */ = {
+			isa = PBXGroup;
+			children = (
+				57C042B803D945282C2ED1F6 /* KakaApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		EBF7C2AB094126114C47B01E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E94C51718C662EAE17121F88 /* Kaka.app */,
+				CCBD757929215F30D1FE0EAF /* KakaTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F91290864358CC44EB6EB8EF /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				955E83D84F9E1B3D37AC4937 /* CancellableContinuation.swift */,
+				24A3C6BFC937E5F099EC48AA /* ExportShareItem.swift */,
+				DB8A6DF4CBC3F5AE6CF065C8 /* ImageImporter.swift */,
+				00320414EC48D1D1286AD741 /* PhotoLibraryService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4FCD466ED7F51CF4071B20D5 /* KakaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 70949AF5EF0D0DE998F2941F /* Build configuration list for PBXNativeTarget "KakaTests" */;
+			buildPhases = (
+				F2860A442E5B85FF6326355E /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C5500E10283D534A3E65A3AB /* PBXTargetDependency */,
+			);
+			name = KakaTests;
+			packageProductDependencies = (
+			);
+			productName = KakaTests;
+			productReference = CCBD757929215F30D1FE0EAF /* KakaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		EFFCD9288AA2B416FD17A99D /* Kaka */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB3DEBB94994310751AF3333 /* Build configuration list for PBXNativeTarget "Kaka" */;
+			buildPhases = (
+				C22B5CC96BE8D49875594B31 /* Sources */,
+				C39958EEB10BFA7EAC855A7D /* Resources */,
+				192186AD4F192BCDE2BDBEAA /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Kaka;
+			packageProductDependencies = (
+				9BC10D3B847AF472C1D87739 /* StitchCore */,
+				A54CBA8B629C3B8C72DDC067 /* StitchWorkflow */,
+			);
+			productName = Kaka;
+			productReference = E94C51718C662EAE17121F88 /* Kaka.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		167255D7B2BDD55C92A3A751 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					EFFCD9288AA2B416FD17A99D = {
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 615E64FFCA6E987CF324F885 /* Build configuration list for PBXProject "Kaka" */;
+			developmentRegion = "zh-Hans";
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+				es,
+				fr,
+				ja,
+				ko,
+				"zh-Hans",
+				"zh-Hant",
+			);
+			mainGroup = 07F9D76A59C7C16DAC7F03D5;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				2C317E10AD7677A4FA2C850E /* XCLocalSwiftPackageReference "StitchCore" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = EBF7C2AB094126114C47B01E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EFFCD9288AA2B416FD17A99D /* Kaka */,
+				4FCD466ED7F51CF4071B20D5 /* KakaTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C39958EEB10BFA7EAC855A7D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				68231E4FB823F0C0DF2F724D /* Assets.xcassets in Resources */,
+				CAF12DF97D0AF7021417BDE7 /* Fixtures in Resources */,
+				BBBF41F40DA90B76E5C688B4 /* InfoPlist.xcstrings in Resources */,
+				81C23A8D753222F4E03F7ED1 /* LICENSE in Resources */,
+				59692AC53F140510A39D1375 /* LegalContent.json in Resources */,
+				792AFBAA0FBE0D0B793457C4 /* Localizable.xcstrings in Resources */,
+				63BD160E2F2EB043D2A5B44B /* PrivacyInfo.xcprivacy in Resources */,
+				A0D2700D587589BF6FBBC5AD /* THIRD_PARTY_NOTICES.md in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C22B5CC96BE8D49875594B31 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE2DCA061E90C2D94C991971 /* AboutView.swift in Sources */,
+				8BD103CAD916D03A4CE47235 /* CancellableContinuation.swift in Sources */,
+				F1D27E8E3E08ACE6FC3C43E9 /* CropSheet.swift in Sources */,
+				DBB316F65FE30DFFDF73DC3C /* DemoPhotoLibrary.swift in Sources */,
+				EED265F53FE6CC278D368325 /* EditorView.swift in Sources */,
+				C425028369C3EA8F0F68F724 /* ExportShareItem.swift in Sources */,
+				5A802314D12EB4A3B7A3B9BF /* HomeView.swift in Sources */,
+				AB6EA1654C976FB95CBCEBA0 /* ImageImporter.swift in Sources */,
+				7B298A173374C45D447FF2C7 /* JunctionEditor.swift in Sources */,
+				7495EB8D057B1EDA99B5BC2E /* KakaApp.swift in Sources */,
+				6C59443C6DB697835D8CD85A /* LongImageViewer.swift in Sources */,
+				39E658475EF10840E4E91DBC /* PhotoLibraryService.swift in Sources */,
+				61E5DDF46EB83AD9FD03CF7F /* ResultActions.swift in Sources */,
+				15470EB72CB064C9241673ED /* ResultCard.swift in Sources */,
+				787C0746A333A124118FEE52 /* SettingsView.swift in Sources */,
+				1216F0AF9136C4C7A49041A2 /* Support.swift in Sources */,
+				0D7C191F3BFEDC7D3CF7C373 /* Theme.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F2860A442E5B85FF6326355E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				389F1AA3ABE0CBE181FE4B77 /* CancellableContinuationTests.swift in Sources */,
+				B42C4DBAD31BBFAE83E65010 /* ImageImporterTests.swift in Sources */,
+				023DB017A1FFD1AB97961364 /* READMEExamples.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C5500E10283D534A3E65A3AB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EFFCD9288AA2B416FD17A99D /* Kaka */;
+			targetProxy = D511C7F25C1B630183C00465 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		394CA0A71F9E7F38B69988B0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		56331E1315B3F90D1B90DFC0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Kaka/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Kaka;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.photography";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "将你确认导出的无水印长图保存到照片图库。";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "读取你授权的最近截图，在设备上识别重叠并拼成长图。你也可以不授权，改用系统选择器手动选择截图。";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.kaka;
+				SDKROOT = iphoneos;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		8931D9FE01095F4992702267 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		B1EBFBD415886A0F572AAAA2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.kaka.tests;
+				SDKROOT = iphoneos;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = nonisolated;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Kaka.app/Kaka";
+			};
+			name = Debug;
+		};
+		CC0008D7991F1A091002AD19 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Kaka/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Kaka;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.photography";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "将你确认导出的无水印长图保存到照片图库。";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "读取你授权的最近截图，在设备上识别重叠并拼成长图。你也可以不授权，改用系统选择器手动选择截图。";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.kaka;
+				SDKROOT = iphoneos;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D3DF6EAEBF3D5AD91DB8C2DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.kaka.tests;
+				SDKROOT = iphoneos;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = nonisolated;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Kaka.app/Kaka";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		615E64FFCA6E987CF324F885 /* Build configuration list for PBXProject "Kaka" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8931D9FE01095F4992702267 /* Debug */,
+				394CA0A71F9E7F38B69988B0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		70949AF5EF0D0DE998F2941F /* Build configuration list for PBXNativeTarget "KakaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B1EBFBD415886A0F572AAAA2 /* Debug */,
+				D3DF6EAEBF3D5AD91DB8C2DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		CB3DEBB94994310751AF3333 /* Build configuration list for PBXNativeTarget "Kaka" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CC0008D7991F1A091002AD19 /* Debug */,
+				56331E1315B3F90D1B90DFC0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		2C317E10AD7677A4FA2C850E /* XCLocalSwiftPackageReference "StitchCore" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = StitchCore;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9BC10D3B847AF472C1D87739 /* StitchCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = StitchCore;
+		};
+		A54CBA8B629C3B8C72DDC067 /* StitchWorkflow */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = StitchWorkflow;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 167255D7B2BDD55C92A3A751 /* Project object */;
+}

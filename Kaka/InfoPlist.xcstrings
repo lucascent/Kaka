@@ -1,0 +1,136 @@
+{
+  "sourceLanguage" : "zh-Hans",
+  "strings" : {
+    "CFBundleDisplayName" : {
+      "comment" : "Bundle display name",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Kaka"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kaka"
+          }
+        }
+      }
+    },
+    "CFBundleName" : {
+      "comment" : "Bundle name",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Kaka"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kaka"
+          }
+        }
+      }
+    },
+    "NSPhotoLibraryAddUsageDescription" : {
+      "comment" : "Privacy - Photo Library Additions Usage Description",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kaka saves the watermark-free stitched images you choose to export to your photo library."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kaka guarda en tu fototeca las capturas largas sin marca de agua que decidas exportar."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kaka enregistre dans votre photothèque les captures longues sans filigrane que vous choisissez d’exporter."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "書き出しを選んだ透かしなしの長いスクリーンショットを、写真ライブラリに保存します。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "내보내기를 선택한 워터마크 없는 긴 스크린샷을 사진 보관함에 저장합니다."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "将你确认导出的无水印长图保存到照片图库。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kaka 會將你選擇輸出的無浮水印長圖儲存到「照片」。"
+          }
+        }
+      }
+    },
+    "NSPhotoLibraryUsageDescription" : {
+      "comment" : "Privacy - Photo Library Usage Description",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kaka finds recent screenshots you give it access to and stitches them on your device. You can also select screenshots manually with the system photo picker."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kaka busca las capturas recientes a las que le des acceso y las une en tu dispositivo. También puedes elegirlas manualmente con el selector de fotos del sistema."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kaka repère les captures récentes auxquelles vous lui donnez accès et les assemble sur votre appareil. Vous pouvez aussi les choisir manuellement dans le sélecteur de photos du système."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "アクセスを許可した最近のスクリーンショットを検索し、重なりを見つけて端末上でつなぎ合わせます。システムの写真選択画面から手動で選ぶこともできます。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "접근을 허용한 최근 스크린샷을 찾아 기기에서 겹치는 부분을 맞춰 이어 붙입니다. 시스템 사진 선택기에서 직접 스크린샷을 선택할 수도 있습니다."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "读取你授权的最近截图，在设备上识别重叠并拼成长图。你也可以不授权，改用系统选择器手动选择截图。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kaka 會讀取你允許取用的近期截圖，在裝置上找出重疊的內容並拼成長圖。你也可以透過系統的照片選擇器手動選擇截圖。"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

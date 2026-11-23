@@ -1,0 +1,104 @@
+{
+  "inputs": [
+    {
+      "fileURL": "screenshot_01.png",
+      "id": "51C9F22F-1453-4C83-88EE-97712BF8A0A3",
+      "size": {
+        "height": 1688,
+        "width": 780
+      }
+    },
+    {
+      "fileURL": "screenshot_02.png",
+      "id": "11D07418-79B4-4C9F-BA4A-D13B9AA6FBEC",
+      "size": {
+        "height": 1688,
+        "width": 780
+      }
+    },
+    {
+      "fileURL": "screenshot_03.png",
+      "id": "A23A0701-D452-4D87-8810-29C26BCB1284",
+      "size": {
+        "height": 1688,
+        "width": 780
+      }
+    }
+  ],
+  "issues": [],
+  "pairs": [
+    {
+      "alignment": {
+        "confidence": 0.9943291008957009,
+        "manuallyConfirmed": false,
+        "offsetY": 683,
+        "seamY": 1224
+      },
+      "candidates": [
+        {
+          "offsetY": 683,
+          "score": 0.9943291008957009
+        },
+        {
+          "offsetY": 1205,
+          "score": 0.7954119020871239
+        },
+        {
+          "offsetY": 161,
+          "score": 0.7196640312108055
+        },
+        {
+          "offsetY": 857,
+          "score": 0.4360252943981743
+        },
+        {
+          "offsetY": 335,
+          "score": 0.4064792852998396
+        }
+      ],
+      "firstID": "51C9F22F-1453-4C83-88EE-97712BF8A0A3",
+      "seamRange": [
+        882,
+        1558
+      ],
+      "secondID": "11D07418-79B4-4C9F-BA4A-D13B9AA6FBEC"
+    },
+    {
+      "alignment": {
+        "confidence": 0.9938618760775106,
+        "manuallyConfirmed": false,
+        "offsetY": 696,
+        "seamY": 1237
+      },
+      "candidates": [
+        {
+          "offsetY": 696,
+          "score": 0.9938618760775106
+        },
+        {
+          "offsetY": 174,
+          "score": 0.6763670877017707
+        },
+        {
+          "offsetY": 1218,
+          "score": 0.5628805068625968
+        },
+        {
+          "offsetY": 1044,
+          "score": 0.453662298650647
+        },
+        {
+          "offsetY": 348,
+          "score": 0.43728148550921886
+        }
+      ],
+      "firstID": "11D07418-79B4-4C9F-BA4A-D13B9AA6FBEC",
+      "seamRange": [
+        895,
+        1504
+      ],
+      "secondID": "A23A0701-D452-4D87-8810-29C26BCB1284"
+    }
+  ],
+  "skippedDuplicateIDs": []
+}

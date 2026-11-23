@@ -1,0 +1,104 @@
+{
+  "inputs": [
+    {
+      "fileURL": "screenshot_01.png",
+      "id": "92C85D20-0CA7-4B08-B902-1E9E64185D56",
+      "size": {
+        "height": 1688,
+        "width": 780
+      }
+    },
+    {
+      "fileURL": "screenshot_02.png",
+      "id": "EBBE9864-13B3-4146-A035-29F653F127E0",
+      "size": {
+        "height": 1688,
+        "width": 780
+      }
+    },
+    {
+      "fileURL": "screenshot_03.png",
+      "id": "CA2903C0-0122-48EE-961D-1538425C736C",
+      "size": {
+        "height": 1688,
+        "width": 780
+      }
+    }
+  ],
+  "issues": [],
+  "pairs": [
+    {
+      "alignment": {
+        "confidence": 0.9984411492416945,
+        "manuallyConfirmed": false,
+        "offsetY": 683,
+        "seamY": 1242
+      },
+      "candidates": [
+        {
+          "offsetY": 683,
+          "score": 0.9984411492416945
+        },
+        {
+          "offsetY": 1159,
+          "score": 0.6781667943010002
+        },
+        {
+          "offsetY": 207,
+          "score": 0.6588641974756366
+        },
+        {
+          "offsetY": 445,
+          "score": 0.6016012762995386
+        },
+        {
+          "offsetY": 921,
+          "score": 0.5931237839032779
+        }
+      ],
+      "firstID": "92C85D20-0CA7-4B08-B902-1E9E64185D56",
+      "seamRange": [
+        885,
+        1569
+      ],
+      "secondID": "EBBE9864-13B3-4146-A035-29F653F127E0"
+    },
+    {
+      "alignment": {
+        "confidence": 0.9998931553967134,
+        "manuallyConfirmed": false,
+        "offsetY": 696,
+        "seamY": 1229
+      },
+      "candidates": [
+        {
+          "offsetY": 696,
+          "score": 0.9998931553967134
+        },
+        {
+          "offsetY": 1172,
+          "score": 0.6808927535258602
+        },
+        {
+          "offsetY": 220,
+          "score": 0.6515272836221037
+        },
+        {
+          "offsetY": 934,
+          "score": 0.6167320157266936
+        },
+        {
+          "offsetY": 458,
+          "score": 0.6147960113234611
+        }
+      ],
+      "firstID": "EBBE9864-13B3-4146-A035-29F653F127E0",
+      "seamRange": [
+        898,
+        1527
+      ],
+      "secondID": "CA2903C0-0122-48EE-961D-1538425C736C"
+    }
+  ],
+  "skippedDuplicateIDs": []
+}

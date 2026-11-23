@@ -1,0 +1,505 @@
+{
+  "updated": "2026-11-21",
+  "supportEmail": "kaka@lucascent.com",
+  "publicWebsiteURL": "https://kaka.astroscape.site/",
+  "appleStandardEULA": "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
+  "localizations": {
+    "zh-Hans": {
+      "languageName": "简体中文",
+      "about": "Kaka 是一款 iPhone 和 iPad 长截图拼接工具。它能识别近期连续截图，你也可以手动选图、调整顺序和接缝，再保存或分享 PNG 或 JPEG 长图。拼接在设备上完成，导出的图片没有水印。",
+      "privacy": [
+        {
+          "heading": "截图与照片权限",
+          "paragraphs": [
+            "你授予照片读取权限后，Kaka 会在获准访问的范围内查找近期截图。自动拼接会用到截图内容、尺寸、拍摄和修改时间，以及照片在设备上的标识。为判断截图是否连续，Kaka 也会查看这段时间内其他照片的拍摄时间。自动查找使用设备上已有的图像。",
+            "你也可以通过系统照片选择器手动导入。Kaka 只接收你选中的图片，手动导入无需授予整个照片图库的读取权限。"
+          ]
+        },
+        {
+          "heading": "保存、分享与系统服务",
+          "paragraphs": [
+            "你选择保存时，Kaka 使用照片写入权限把生成的长图加入相册。你主动分享时，Kaka 将导出文件交给 iOS 分享面板，由你选择接收的 App 或位置。删除原截图需要你的确认，并由系统照片图库执行。",
+            "系统照片选择器可以从 iCloud 照片获取你选中的图片。如果你启用了 iCloud 照片、系统备份或使用了其他分享服务，相关副本由该服务按你的设置和其隐私政策处理。"
+          ]
+        },
+        {
+          "heading": "保留、删除与撤回权限",
+          "paragraphs": [
+            "导入副本、预览和待分享的文件放在 App 的临时存储中，供本次处理使用。相关会话清理或 App 重新启动时会清理工作文件，iOS 也可回收临时存储。语言、导出偏好和隐藏截图所用的本地标识保存在设备上。你可以在 Kaka 设置中清除隐藏记录，或选择「删除 App」移除设备上的 App 数据。",
+            "你可以在 iOS 的「设置 → App → Kaka → 照片」中更改或撤回照片权限。撤回读取权限后仍可手动选图。已经保存到相册或「文件」的图片可在对应位置删除，已分享的副本由接收方管理。"
+          ]
+        },
+        {
+          "heading": "收集、共享与跟踪",
+          "paragraphs": [
+            "Kaka 不要求注册，也不向开发者发送截图、照片标识或使用记录。App 未接入广告或第三方分析服务，不跟踪用户，也不出售个人信息。Apple 可能根据你的系统设置处理设备诊断信息。"
+          ]
+        },
+        {
+          "heading": "联系与政策更新",
+          "paragraphs": [
+            "如果你主动发邮件，Kaka 的开发者会收到你的邮箱、来信和你附带的文件，用于回复和处理请求。邮件会在处理所需期间保留，法律另有要求时按法律规定保留。你可通过下方邮箱提出隐私问题或请求访问、更正、删除你提供的信息。政策更新日期会显示在本页。"
+          ]
+        }
+      ],
+      "terms": [
+        {
+          "heading": "适用范围与 App 许可",
+          "paragraphs": [
+            "这些条款说明你如何使用 Kaka。如果你通过 App Store 获取 Kaka，App 的使用许可适用 Apple 标准最终用户许可协议。"
+          ]
+        },
+        {
+          "heading": "你的内容",
+          "paragraphs": [
+            "你保有对截图及输出图片原本享有的权利。请只处理和分享你有权使用的内容，尊重他人的隐私、著作权和其他合法权利，并遵守适用法律。"
+          ]
+        },
+        {
+          "heading": "检查结果和原截图",
+          "paragraphs": [
+            "自动拼接的效果取决于截图的清晰度、重叠范围和内容变化。保存或分享前请检查结果，必要时手动调整。建议在确认输出可用后再删除原截图。Kaka 发起的原图删除由你确认后交给系统照片图库处理。"
+          ]
+        },
+        {
+          "heading": "可用性与消费者权利",
+          "paragraphs": [
+            "功能的可用性取决于设备、iOS 或 iPadOS 版本及照片权限。保存、备份和分享使用的外部服务适用其各自条款。在适用法律允许的范围内，Kaka 按现状提供。你根据适用法律享有的强制性消费者权利与救济不受影响。"
+          ]
+        },
+        {
+          "heading": "更新与联系",
+          "paragraphs": [
+            "条款更新后，本页会显示最新版本和更新日期。使用过程中遇到问题，可以通过下方邮箱联系 Kaka 的开发者。"
+          ]
+        }
+      ]
+    },
+    "zh-Hant": {
+      "languageName": "繁體中文",
+      "about": "Kaka 是一款適用於 iPhone 和 iPad 的長截圖拼接工具。它能找出近期連續擷取的截圖。你也可以手動選圖、調整順序和接縫，再儲存或分享 PNG 或 JPEG 長圖。拼接在裝置上完成，輸出的圖片沒有浮水印。",
+      "privacy": [
+        {
+          "heading": "截圖與照片取用權限",
+          "paragraphs": [
+            "你授予照片讀取權限後，Kaka 會在你允許取用的範圍內尋找近期截圖。自動拼接會使用截圖的內容、尺寸、拍攝和修改時間，以及照片在裝置上的識別碼。為判斷截圖是否連續，Kaka 也會查看同一時段內其他照片的拍攝時間。自動尋找會使用裝置上已有的圖片。",
+            "你也可以透過系統的照片選擇器手動匯入圖片。Kaka 只會收到你選取的圖片，手動匯入無須授予整個照片圖庫的讀取權限。"
+          ]
+        },
+        {
+          "heading": "儲存、分享與系統服務",
+          "paragraphs": [
+            "你選擇儲存時，Kaka 會使用照片寫入權限，將產生的長圖加入「照片」。你主動分享時，Kaka 會把輸出的檔案交給 iOS 分享選單，由你選擇接收的 App 或位置。刪除原始截圖需要你確認，並由系統照片圖庫執行。",
+            "系統的照片選擇器可以從「iCloud 照片」取得你選取的圖片。如果你開啟了「iCloud 照片」、系統備份或使用其他分享服務，相關副本會由該服務依照你的設定及其隱私權政策處理。"
+          ]
+        },
+        {
+          "heading": "保留、刪除與撤銷取用權限",
+          "paragraphs": [
+            "匯入的副本、預覽和準備分享的檔案會放在 App 的暫存空間，供本次處理使用。清除相關工作階段或重新啟動 App 時，工作檔案會一併清除。iOS 也可以回收暫存空間。語言、輸出偏好及用來隱藏截圖的本機識別碼都儲存在裝置上。你可以在 Kaka 的設定中清除隱藏紀錄，或選擇「刪除 App」，從裝置移除 App 資料。",
+            "你可以在 iOS 的「設定 → App → Kaka → 照片」中變更或撤銷照片取用權限。撤銷讀取權限後，仍可手動選圖。已儲存至「照片」或「檔案」的圖片可在對應位置刪除，已分享的副本由接收方管理。"
+          ]
+        },
+        {
+          "heading": "蒐集、分享與追蹤",
+          "paragraphs": [
+            "Kaka 無須註冊，也不會把截圖、照片識別碼或使用紀錄傳送給開發者。App 未整合廣告或第三方分析服務，不追蹤使用者，也不出售個人資料。Apple 可能會依照你的系統設定處理裝置診斷資料。"
+          ]
+        },
+        {
+          "heading": "聯絡方式與政策更新",
+          "paragraphs": [
+            "如果你主動寄送電子郵件，Kaka 的開發者會收到你的電子郵件地址、來信與附件，用於回覆與處理請求。郵件會保留至處理所需的期限，法律另有規定時依相關規定保留。你可以透過下方的電子郵件地址提出隱私問題，或要求查閱、更正或刪除你提供的資料。政策更新日期會顯示在本頁。"
+          ]
+        }
+      ],
+      "terms": [
+        {
+          "heading": "適用範圍與 App 授權",
+          "paragraphs": [
+            "這些條款說明你如何使用 Kaka。如果你透過 App Store 取得 Kaka，App 的使用授權適用 Apple 標準使用者授權合約。"
+          ]
+        },
+        {
+          "heading": "你的內容",
+          "paragraphs": [
+            "你保有對截圖和輸出圖片原有的權利。請只處理與分享你有權使用的內容，尊重他人的隱私、著作權和其他合法權利，並遵守適用法律。"
+          ]
+        },
+        {
+          "heading": "檢查結果與原始截圖",
+          "paragraphs": [
+            "自動拼接的效果取決於截圖的清晰度、重疊範圍及內容變化。儲存或分享前請檢查結果，必要時手動調整。建議確認輸出結果可用後，再刪除原始截圖。你確認 Kaka 提出的刪除要求後，會由系統照片圖庫執行。"
+          ]
+        },
+        {
+          "heading": "可用性與消費者權利",
+          "paragraphs": [
+            "功能的可用性取決於裝置、iOS 或 iPadOS 版本及照片取用權限。儲存、備份與分享所使用的外部服務適用各自的條款。在適用法律允許的範圍內，Kaka 依現況提供。你依適用法律享有的強制性消費者權利與救濟不受影響。"
+          ]
+        },
+        {
+          "heading": "更新與聯絡方式",
+          "paragraphs": [
+            "條款更新後，本頁會顯示最新版本與更新日期。使用時若遇到問題，可以透過下方的電子郵件地址聯絡 Kaka 的開發者。"
+          ]
+        }
+      ]
+    },
+    "en": {
+      "languageName": "English",
+      "about": "Kaka stitches screenshots into one long image on iPhone and iPad. It can find recent screenshots taken in sequence, or you can select images yourself and adjust their order and seams. Save or share the result as a PNG or JPEG. Stitching takes place on your device, and exports have no watermark.",
+      "privacy": [
+        {
+          "heading": "Screenshots and photo access",
+          "paragraphs": [
+            "When you grant photo library access, Kaka looks for recent screenshots within the access you allow. Automatic stitching uses screenshot content, dimensions, creation and modification dates, and local photo identifiers. Kaka also checks when other photos in the same time period were taken to tell whether screenshots were taken in sequence. Automatic discovery uses images already available on your device.",
+            "You can also import images manually with the system photo picker. Kaka receives only the images you select. Manual import does not require read access to your photo library."
+          ]
+        },
+        {
+          "heading": "Saving, sharing, and system services",
+          "paragraphs": [
+            "When you choose to save, Kaka uses permission to add the resulting image to Photos. When you choose to share, Kaka passes the export to the iOS share sheet so you can choose an app or destination. Deleting original screenshots requires your confirmation and is handled by the system photo library.",
+            "The system picker can retrieve images you select from iCloud Photos. If you enable iCloud Photos or device backups, or share to another service, that service handles any copies according to your settings and its privacy policy."
+          ]
+        },
+        {
+          "heading": "Retention, deletion, and permissions",
+          "paragraphs": [
+            "Imported copies, previews, and files prepared for sharing are stored temporarily for processing. Working files are cleaned up when the related session is cleared or the app is restarted. iOS can also reclaim temporary storage. Language and export preferences, and local identifiers for hidden screenshots, stay on the device. You can clear hidden screenshot records in Kaka Settings or use Delete App to remove app data from your device.",
+            "You can change or revoke photo access in iOS Settings under Apps → Kaka → Photos. Manual selection remains available when read access is revoked. Delete images you saved to Photos or Files from those locations. Copies you have shared are managed by their recipients."
+          ]
+        },
+        {
+          "heading": "Collection, sharing, and tracking",
+          "paragraphs": [
+            "Kaka requires no account and does not send screenshots, local photo identifiers, or usage records to the developer. The app contains no advertising or third-party analytics services. It does not track users or sell personal information. Apple may process device diagnostics according to your system settings."
+          ]
+        },
+        {
+          "heading": "Contact and policy updates",
+          "paragraphs": [
+            "If you email us, the Kaka developer receives your email address, message, and any attachments you include to respond to and handle your request. We retain correspondence for as long as needed to handle the request, or longer as required by law. Use the address below to ask a privacy question or request access to, correction of, or deletion of information you provided. The date of the latest policy update appears on this page."
+          ]
+        }
+      ],
+      "terms": [
+        {
+          "heading": "Scope and app license",
+          "paragraphs": [
+            "These terms describe your use of Kaka. If you get Kaka through the App Store, your license to use the app is governed by Apple's Standard End User License Agreement."
+          ]
+        },
+        {
+          "heading": "Your content",
+          "paragraphs": [
+            "You keep the rights you already have in your screenshots and resulting images. Process and share only content you have the right to use. Respect other people's privacy, copyright, and other legal rights, and follow applicable law."
+          ]
+        },
+        {
+          "heading": "Check your result and originals",
+          "paragraphs": [
+            "Automatic stitching depends on image quality, overlap, and changes between screenshots. Check the result before saving or sharing, and adjust it if needed. Keep the originals until you have confirmed the export is usable. When you confirm a deletion requested in Kaka, the system photo library handles it."
+          ]
+        },
+        {
+          "heading": "Availability and consumer rights",
+          "paragraphs": [
+            "Feature availability depends on your device, iOS or iPadOS version, and photo permissions. External services you use to save, back up, or share content have their own terms. To the extent permitted by applicable law, Kaka is provided as is. Your mandatory consumer rights and remedies under applicable law remain in effect."
+          ]
+        },
+        {
+          "heading": "Updates and contact",
+          "paragraphs": [
+            "This page displays the current terms and the date they were updated. If you have a question or encounter a problem, contact the Kaka developer at the address below."
+          ]
+        }
+      ]
+    },
+    "es": {
+      "languageName": "Español",
+      "about": "Kaka une capturas de pantalla en una imagen larga en el iPhone y el iPad. Puede detectar capturas recientes tomadas en secuencia. También puedes seleccionar imágenes y ajustar su orden y las uniones. Guarda o comparte el resultado en PNG o JPEG. La unión se realiza en tu dispositivo y los archivos exportados no tienen marca de agua.",
+      "privacy": [
+        {
+          "heading": "Capturas y acceso a Fotos",
+          "paragraphs": [
+            "Si concedes acceso a Fotos, Kaka busca capturas recientes dentro del acceso que autorizas. La unión automática utiliza el contenido de las capturas, sus dimensiones, sus fechas de creación y modificación y sus identificadores locales. Kaka también comprueba cuándo se tomaron otras fotos del mismo periodo para determinar si las capturas son consecutivas. La detección automática utiliza imágenes que ya están disponibles en tu dispositivo.",
+            "También puedes importar imágenes con el selector de fotos del sistema. Kaka recibe solo las imágenes que seleccionas. La importación manual no requiere acceso de lectura a tu fototeca."
+          ]
+        },
+        {
+          "heading": "Guardar, compartir y servicios del sistema",
+          "paragraphs": [
+            "Al guardar, Kaka utiliza el permiso correspondiente para añadir la imagen resultante a Fotos. Al compartir, Kaka entrega el archivo al menú para compartir de iOS para que elijas la aplicación o el destino. Eliminar las capturas originales requiere tu confirmación y lo gestiona la fototeca del sistema.",
+            "El selector del sistema puede obtener de Fotos en iCloud las imágenes que elijas. Si activas Fotos en iCloud o las copias de seguridad del dispositivo, o compartes mediante otro servicio, dicho servicio gestiona las copias según tus ajustes y su política de privacidad."
+          ]
+        },
+        {
+          "heading": "Conservación, eliminación y permisos",
+          "paragraphs": [
+            "Las copias importadas, las vistas previas y los archivos preparados para compartir se guardan temporalmente para su procesamiento. Los archivos de trabajo se limpian al eliminar la sesión correspondiente o volver a abrir la app. iOS también puede liberar espacio temporal. Las preferencias de idioma y exportación y los identificadores locales de las capturas ocultas se guardan en el dispositivo. Puedes borrar el registro de capturas ocultas en los ajustes de Kaka o eliminar la app para quitar sus datos del dispositivo.",
+            "Puedes cambiar o retirar el acceso en Ajustes de iOS, en Apps → Kaka → Fotos. Si retiras el acceso de lectura, puedes seguir seleccionando imágenes manualmente. Elimina las imágenes guardadas en Fotos o Archivos desde esas ubicaciones. Los destinatarios gestionan las copias que ya hayas compartido."
+          ]
+        },
+        {
+          "heading": "Recogida, comunicación y seguimiento",
+          "paragraphs": [
+            "Kaka no requiere una cuenta ni envía al desarrollador capturas, identificadores locales de fotos o datos de uso. La app no integra publicidad ni servicios de análisis de terceros. No rastrea a los usuarios ni vende datos personales. Apple puede tratar datos de diagnóstico del dispositivo según tus ajustes del sistema."
+          ]
+        },
+        {
+          "heading": "Contacto y cambios en la política",
+          "paragraphs": [
+            "Si nos escribes, el desarrollador de Kaka recibe tu dirección de correo electrónico, el mensaje y los archivos que adjuntes para responder y gestionar tu solicitud. La correspondencia se conserva mientras sea necesaria para tramitar la solicitud o durante el plazo exigido por ley. Puedes usar la dirección indicada abajo para consultas de privacidad o para solicitar el acceso, la rectificación o la eliminación de la información que hayas proporcionado. Esta página indica la fecha de la última actualización."
+          ]
+        }
+      ],
+      "terms": [
+        {
+          "heading": "Ámbito y licencia de la app",
+          "paragraphs": [
+            "Estas condiciones describen el uso de Kaka. Si obtienes Kaka a través del App Store, el contrato de licencia estándar de Apple para usuarios finales rige tu licencia de uso de la app."
+          ]
+        },
+        {
+          "heading": "Tu contenido",
+          "paragraphs": [
+            "Conservas los derechos que ya tengas sobre las capturas y las imágenes resultantes. Procesa y comparte solo contenido que tengas derecho a usar. Respeta la privacidad, los derechos de autor y los demás derechos de otras personas y cumple la legislación aplicable."
+          ]
+        },
+        {
+          "heading": "Revisa el resultado y los originales",
+          "paragraphs": [
+            "La unión automática depende de la calidad, la superposición y los cambios entre capturas. Revisa el resultado antes de guardarlo o compartirlo y ajústalo si hace falta. Conserva los originales hasta confirmar que puedes usar el archivo exportado. La fototeca del sistema gestiona las eliminaciones que confirmes en Kaka."
+          ]
+        },
+        {
+          "heading": "Disponibilidad y derechos del consumidor",
+          "paragraphs": [
+            "Las funciones disponibles dependen del dispositivo, la versión de iOS o iPadOS y los permisos de Fotos. Los servicios externos que uses para guardar, hacer copias de seguridad o compartir contenido tienen sus propias condiciones. En la medida permitida por la ley aplicable, Kaka se proporciona tal cual. Se mantienen los derechos y recursos del consumidor que la legislación aplicable reconoce con carácter obligatorio."
+          ]
+        },
+        {
+          "heading": "Actualizaciones y contacto",
+          "paragraphs": [
+            "En esta página figuran las condiciones vigentes y su fecha de actualización. Si tienes alguna consulta o encuentras un problema, escribe al desarrollador de Kaka a la dirección indicada abajo."
+          ]
+        }
+      ]
+    },
+    "fr": {
+      "languageName": "Français",
+      "about": "Kaka assemble vos captures d’écran en une seule image longue sur iPhone et iPad. L’app peut repérer les captures récentes prises à la suite. Vous pouvez aussi sélectionner vos images et ajuster leur ordre et les raccords. Enregistrez ou partagez le résultat en PNG ou JPEG. L’assemblage se fait sur votre appareil et les fichiers exportés n’ont pas de filigrane.",
+      "privacy": [
+        {
+          "heading": "Captures d’écran et accès à Photos",
+          "paragraphs": [
+            "Si vous accordez l’accès à Photos, Kaka recherche les captures récentes dans les limites de votre autorisation. L’assemblage automatique utilise leur contenu, leurs dimensions, leurs dates de création et de modification et leurs identifiants locaux. Kaka vérifie également quand les autres photos de la même période ont été prises pour déterminer si les captures se suivent. La détection automatique utilise des images déjà disponibles sur votre appareil.",
+            "Vous pouvez aussi importer des images via le sélecteur de photos du système. Kaka reçoit uniquement les images que vous sélectionnez. L’importation manuelle ne nécessite pas l’accès en lecture à votre photothèque."
+          ]
+        },
+        {
+          "heading": "Enregistrement, partage et services du système",
+          "paragraphs": [
+            "Lorsque vous enregistrez le résultat, Kaka utilise l’autorisation d’ajouter des images à Photos. Lorsque vous le partagez, Kaka remet le fichier à la feuille de partage d’iOS pour que vous choisissiez l’app ou la destination. La suppression des captures d’origine nécessite votre confirmation et relève de la photothèque du système.",
+            "Le sélecteur du système peut récupérer dans Photos iCloud les images que vous choisissez. Si vous activez Photos iCloud ou les sauvegardes de l’appareil, ou si vous partagez via un autre service, ce service gère les copies selon vos réglages et sa politique de confidentialité."
+          ]
+        },
+        {
+          "heading": "Conservation, suppression et autorisations",
+          "paragraphs": [
+            "Les copies importées, les aperçus et les fichiers préparés pour le partage sont conservés temporairement pour le traitement. Les fichiers de travail sont nettoyés lorsque la session correspondante est effacée ou que l’app est relancée. iOS peut aussi récupérer l’espace temporaire. Les préférences de langue et d’exportation et les identifiants locaux des captures masquées restent sur l’appareil. Vous pouvez effacer l’historique des captures masquées dans les réglages de Kaka ou supprimer l’app pour retirer ses données de votre appareil.",
+            "Vous pouvez modifier ou retirer l’accès à Photos dans Réglages iOS, sous Apps → Kaka → Photos. La sélection manuelle reste disponible si vous retirez l’accès en lecture. Supprimez les images enregistrées dans Photos ou Fichiers depuis ces emplacements. Les destinataires gèrent les copies déjà partagées."
+          ]
+        },
+        {
+          "heading": "Collecte, communication et suivi",
+          "paragraphs": [
+            "Kaka ne nécessite pas de compte et ne transmet pas au développeur les captures, les identifiants locaux des photos ni les données d’utilisation. L’app n’intègre aucun service publicitaire ou d’analyse tiers. Elle ne suit pas les utilisateurs et ne vend pas de données personnelles. Apple peut traiter des données de diagnostic de l’appareil selon vos réglages système."
+          ]
+        },
+        {
+          "heading": "Contact et mise à jour de la politique",
+          "paragraphs": [
+            "Si vous nous écrivez, le développeur de Kaka reçoit votre adresse e-mail, votre message et vos éventuelles pièces jointes afin de répondre et de traiter votre demande. Les échanges sont conservés pendant la durée nécessaire au traitement de votre demande ou pendant la durée exigée par la loi. L’adresse ci-dessous vous permet de poser une question ou de demander l’accès, la rectification ou la suppression des informations fournies. Cette page indique la date de la dernière mise à jour."
+          ]
+        }
+      ],
+      "terms": [
+        {
+          "heading": "Champ d’application et licence",
+          "paragraphs": [
+            "Ces conditions décrivent l’utilisation de Kaka. Si vous obtenez Kaka sur l’App Store, le contrat de licence utilisateur final standard d’Apple régit votre licence d’utilisation de l’app."
+          ]
+        },
+        {
+          "heading": "Vos contenus",
+          "paragraphs": [
+            "Vous conservez les droits dont vous disposez déjà sur vos captures et les images produites. Traitez et partagez uniquement des contenus que vous avez le droit d’utiliser. Respectez la vie privée, les droits d’auteur et les autres droits des tiers ainsi que la loi applicable."
+          ]
+        },
+        {
+          "heading": "Vérification du résultat et des originaux",
+          "paragraphs": [
+            "L’assemblage automatique dépend de la qualité, du chevauchement et des différences entre les captures. Vérifiez le résultat avant de l’enregistrer ou de le partager et ajustez-le au besoin. Conservez les originaux jusqu’à ce que vous ayez vérifié que l’export est utilisable. La photothèque du système gère les suppressions que vous confirmez dans Kaka."
+          ]
+        },
+        {
+          "heading": "Disponibilité et droits des consommateurs",
+          "paragraphs": [
+            "La disponibilité des fonctions dépend de l’appareil, de la version d’iOS ou d’iPadOS et des autorisations d’accès à Photos. Les services externes utilisés pour enregistrer, sauvegarder ou partager ont leurs propres conditions. Dans la mesure permise par la loi applicable, Kaka est fourni en l’état. Les droits et recours impératifs des consommateurs prévus par la loi applicable restent en vigueur."
+          ]
+        },
+        {
+          "heading": "Mises à jour et contact",
+          "paragraphs": [
+            "Cette page présente les conditions en vigueur et leur date de mise à jour. Si vous avez une question ou rencontrez un problème, contactez le développeur de Kaka à l’adresse ci-dessous."
+          ]
+        }
+      ]
+    },
+    "ja": {
+      "languageName": "日本語",
+      "about": "Kaka は、iPhone と iPad でスクリーンショットを1枚の長い画像にまとめるアプリです。直近の連続したスクリーンショットを検出できるほか、手動で画像を選び、順番やつなぎ目を調整できます。結果は PNG または JPEG で保存・共有できます。画像の結合は端末内で行われ、書き出し画像に透かしは入りません。",
+      "privacy": [
+        {
+          "heading": "スクリーンショットと写真へのアクセス",
+          "paragraphs": [
+            "写真へのアクセスを許可すると、Kaka は許可された範囲で直近のスクリーンショットを探します。自動結合には、スクリーンショットの内容、寸法、作成日時、変更日時、端末内の写真の識別子を使用します。スクリーンショットが連続しているかを判断するため、同じ期間内に撮影された他の写真の撮影日時も確認します。自動検出には端末上で利用可能な画像を使用します。",
+            "システムの写真選択画面から画像を手動で取り込むこともできます。Kaka が受け取るのは選択した画像のみです。手動での取り込みに写真ライブラリへの読み取り許可は不要です。"
+          ]
+        },
+        {
+          "heading": "保存・共有とシステムサービス",
+          "paragraphs": [
+            "保存するときは、写真の追加権限を使って結合結果を「写真」に保存します。共有するときは、iOS の共有メニューに書き出しファイルを渡します。共有先のアプリや場所はご自身で選択できます。元のスクリーンショットの削除には確認が必要です。削除はシステムの写真ライブラリが実行します。",
+            "システムの写真選択画面が、選択した画像を iCloud 写真から取得する場合があります。iCloud 写真や端末のバックアップを有効にした場合、または別のサービスに共有した場合、コピーはそのサービスがお客様の設定と当該サービスのプライバシーポリシーに従って取り扱います。"
+          ]
+        },
+        {
+          "heading": "保存期間・削除・アクセス許可",
+          "paragraphs": [
+            "取り込んだコピー、プレビュー、共有用のファイルは処理のために一時保存します。該当するセッションが消去されたときやアプリの再起動時に作業ファイルを整理します。iOS が一時ストレージを解放することもあります。言語と書き出しの設定、非表示にしたスクリーンショットの端末内識別子は端末に保存します。非表示の記録は Kaka の設定で消去できます。端末上のアプリデータを削除するには、アプリを削除してください。",
+            "iOS の「設定 → アプリ → Kaka → 写真」でアクセス許可を変更または取り消せます。読み取り許可を取り消した後も手動で画像を選択できます。「写真」や「ファイル」に保存済みの画像は、それぞれの保存先で削除してください。共有済みのコピーは受信者が管理します。"
+          ]
+        },
+        {
+          "heading": "データの収集・提供・トラッキング",
+          "paragraphs": [
+            "Kaka の利用にアカウントは不要です。スクリーンショット、写真の端末内識別子、利用記録を開発者へ送ることはありません。広告や第三者の分析サービスは組み込んでいません。利用者のトラッキングや個人情報の販売は行いません。Apple はシステム設定に従って端末の診断情報を処理する場合があります。"
+          ]
+        },
+        {
+          "heading": "お問い合わせとポリシーの更新",
+          "paragraphs": [
+            "メールでお問い合わせいただいた場合、Kaka の開発者は、返信およびご依頼への対応のためにメールアドレス、本文、添付ファイルを受け取ります。メールは対応に必要な期間、または法令で求められる期間保管します。プライバシーに関する質問や、提供した情報の開示、訂正、削除のご依頼は下記のアドレスへお送りください。最新の更新日はこのページに記載します。"
+          ]
+        }
+      ],
+      "terms": [
+        {
+          "heading": "適用範囲と使用許諾",
+          "paragraphs": [
+            "本規約は Kaka の利用について定めます。App Store から Kaka を入手した場合、アプリの使用許諾には Apple の標準エンドユーザー使用許諾契約が適用されます。"
+          ]
+        },
+        {
+          "heading": "利用者のコンテンツ",
+          "paragraphs": [
+            "スクリーンショットや書き出し画像について、利用者がもともと有する権利は利用者に帰属します。利用する権利のあるコンテンツのみを処理・共有し、第三者のプライバシー、著作権その他の権利を尊重し、適用法令を遵守してください。"
+          ]
+        },
+        {
+          "heading": "結合結果と元のスクリーンショットの確認",
+          "paragraphs": [
+            "自動結合の結果は、画像の品質、重なりの範囲、スクリーンショット間の内容の変化に左右されます。保存や共有の前に結果を確認し、必要に応じて調整してください。書き出し結果が使えることを確認するまで、元の画像を保存しておいてください。Kaka で削除を確認すると、削除はシステムの写真ライブラリが行います。"
+          ]
+        },
+        {
+          "heading": "利用環境と消費者の権利",
+          "paragraphs": [
+            "利用できる機能は端末、iOS または iPadOS のバージョン、写真へのアクセス許可によって異なります。保存、バックアップ、共有に利用する外部サービスには、それぞれの規約が適用されます。適用法令で認められる範囲で、Kaka は現状有姿で提供されます。適用法令に基づく強行法規上の消費者の権利および救済は妨げられません。"
+          ]
+        },
+        {
+          "heading": "更新とお問い合わせ",
+          "paragraphs": [
+            "このページに最新の規約と更新日を掲載します。ご質問や不具合については下記のアドレスから Kaka の開発者にお問い合わせください。"
+          ]
+        }
+      ]
+    },
+    "ko": {
+      "languageName": "한국어",
+      "about": "Kaka는 iPhone과 iPad에서 스크린샷을 한 장의 긴 이미지로 이어 붙이는 앱입니다. 최근에 연속으로 찍은 스크린샷을 찾거나, 직접 이미지를 선택해 순서와 이음새를 조정할 수 있어요. 결과를 PNG 또는 JPEG로 저장하거나 공유할 수 있습니다. 이미지는 기기에서 합쳐지며 내보낸 파일에는 워터마크가 없습니다.",
+      "privacy": [
+        {
+          "heading": "스크린샷과 사진 접근 권한",
+          "paragraphs": [
+            "사진 접근을 허용하면 Kaka는 허용된 범위에서 최근 스크린샷을 찾습니다. 자동 이어 붙이기에는 스크린샷의 내용, 크기, 생성 및 수정 날짜, 사진의 기기 내 식별자를 사용합니다. 스크린샷이 연속으로 찍혔는지 확인하기 위해 같은 기간에 촬영된 다른 사진의 촬영 날짜도 확인합니다. 자동 감지는 기기에 이미 있는 이미지를 사용합니다.",
+            "시스템 사진 선택기에서 이미지를 직접 가져올 수도 있습니다. Kaka는 선택한 이미지만 받습니다. 직접 가져오려면 사진 보관함 읽기 권한을 별도로 부여할 필요가 없습니다."
+          ]
+        },
+        {
+          "heading": "저장, 공유 및 시스템 서비스",
+          "paragraphs": [
+            "저장을 선택하면 Kaka는 사진 추가 권한으로 결과 이미지를 사진 앱에 저장합니다. 공유를 선택하면 내보낸 파일을 iOS 공유 메뉴에 넘기고, 사용자가 앱이나 저장 위치를 선택합니다. 원본 스크린샷을 삭제하려면 사용자가 확인해야 하며, 삭제는 시스템 사진 보관함에서 처리합니다.",
+            "시스템 사진 선택기는 선택한 이미지를 iCloud 사진에서 가져올 수 있습니다. iCloud 사진이나 기기 백업을 사용하거나 다른 서비스로 공유하면 해당 서비스가 사용자의 설정과 개인정보 처리방침에 따라 사본을 처리합니다."
+          ]
+        },
+        {
+          "heading": "보관, 삭제 및 권한 철회",
+          "paragraphs": [
+            "가져온 사본, 미리보기, 공유용 파일은 처리를 위해 임시 저장합니다. 관련 작업 세션을 지우거나 앱을 다시 실행할 때 작업 파일을 정리합니다. iOS도 임시 저장 공간을 정리할 수 있습니다. 언어 및 내보내기 설정과 숨긴 스크린샷의 기기 내 식별자는 기기에 보관됩니다. Kaka 설정에서 숨김 기록을 지우거나 앱을 삭제해 기기에서 앱 데이터를 삭제할 수 있습니다.",
+            "iOS의 설정 → 앱 → Kaka → 사진에서 사진 접근 권한을 변경하거나 철회할 수 있습니다. 읽기 권한을 철회해도 이미지를 직접 선택할 수 있습니다. 사진 앱이나 파일 앱에 저장한 이미지는 해당 위치에서 삭제해야 합니다. 이미 공유한 사본은 수신자가 관리합니다."
+          ]
+        },
+        {
+          "heading": "수집, 제공 및 추적",
+          "paragraphs": [
+            "Kaka는 계정을 요구하지 않으며 스크린샷, 사진의 기기 내 식별자 또는 사용 기록을 개발자에게 보내지 않습니다. 앱에는 광고나 제3자 분석 서비스가 포함되어 있지 않습니다. 사용자를 추적하거나 개인정보를 판매하지 않습니다. Apple은 시스템 설정에 따라 기기 진단 정보를 처리할 수 있습니다."
+          ]
+        },
+        {
+          "heading": "문의 및 방침 변경",
+          "paragraphs": [
+            "이메일로 문의하면 Kaka 개발자는 답변과 요청 처리를 위해 이메일 주소, 메시지 및 첨부 파일을 받습니다. 이메일은 요청 처리에 필요한 기간 또는 법률에서 정한 기간 동안 보관됩니다. 개인정보에 관한 질문이 있거나 제공한 정보의 열람, 정정 또는 삭제를 요청하려면 아래 주소로 문의해 주세요. 이 페이지에 최근 변경 날짜를 표시합니다."
+          ]
+        }
+      ],
+      "terms": [
+        {
+          "heading": "적용 범위 및 앱 사용권",
+          "paragraphs": [
+            "이 약관은 Kaka의 이용에 적용됩니다. App Store에서 Kaka를 다운로드한 경우 앱 사용권에는 Apple의 표준 최종 사용자 사용권 계약이 적용됩니다."
+          ]
+        },
+        {
+          "heading": "사용자 콘텐츠",
+          "paragraphs": [
+            "스크린샷과 결과 이미지에 대해 원래 보유한 권리는 사용자에게 있습니다. 사용할 권한이 있는 콘텐츠만 처리하고 공유해 주세요. 타인의 개인정보, 저작권 및 그 밖의 법적 권리를 존중하고 관련 법률을 준수해야 합니다."
+          ]
+        },
+        {
+          "heading": "결과와 원본 확인",
+          "paragraphs": [
+            "자동 이어 붙이기의 결과는 이미지 품질, 겹치는 범위 및 스크린샷 간의 변경 내용에 따라 달라집니다. 저장하거나 공유하기 전에 결과를 확인하고 필요한 경우 직접 조정해 주세요. 내보낸 결과를 사용할 수 있는지 확인할 때까지 원본을 보관해 주세요. Kaka에서 삭제를 확인하면 시스템 사진 보관함에서 삭제를 처리합니다."
+          ]
+        },
+        {
+          "heading": "이용 가능 여부 및 소비자 권리",
+          "paragraphs": [
+            "사용할 수 있는 기능은 기기, iOS 또는 iPadOS 버전과 사진 접근 권한에 따라 달라집니다. 저장, 백업 또는 공유에 사용하는 외부 서비스에는 각 서비스의 약관이 적용됩니다. 관련 법률에서 허용하는 범위에서 Kaka는 현 상태로 제공됩니다. 관련 법률이 보장하는 소비자의 강행적 권리와 구제 수단은 그대로 적용됩니다."
+          ]
+        },
+        {
+          "heading": "변경 및 문의",
+          "paragraphs": [
+            "이 페이지에 최신 약관과 변경 날짜를 표시합니다. 질문이나 문제가 있으면 아래 이메일 주소로 Kaka 개발자에게 문의해 주세요."
+          ]
+        }
+      ]
+    }
+  }
+}

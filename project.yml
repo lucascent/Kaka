@@ -1,0 +1,73 @@
+name: Kaka
+options:
+  bundleIdPrefix: com.example
+  developmentLanguage: zh-Hans
+  deploymentTarget:
+    iOS: "18.0"
+  createIntermediateGroups: true
+packages:
+  StitchCore:
+    path: StitchCore
+settings:
+  base:
+    SWIFT_VERSION: "6.0"
+    SWIFT_STRICT_CONCURRENCY: complete
+    SWIFT_APPROACHABLE_CONCURRENCY: YES
+    IPHONEOS_DEPLOYMENT_TARGET: "18.0"
+targets:
+  Kaka:
+    type: application
+    platform: iOS
+    sources:
+      - path: Kaka
+      - path: Fixtures
+        type: folder
+        buildPhase: resources
+      - path: LICENSE
+        buildPhase: resources
+      - path: THIRD_PARTY_NOTICES.md
+        buildPhase: resources
+    dependencies:
+      - package: StitchCore
+        product: StitchCore
+      - package: StitchCore
+        product: StitchWorkflow
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.example.kaka
+        SWIFT_DEFAULT_ACTOR_ISOLATION: MainActor
+        SWIFT_EMIT_LOC_STRINGS: YES
+        TARGETED_DEVICE_FAMILY: "1,2"
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_KEY_CFBundleDisplayName: Kaka
+        INFOPLIST_KEY_LSApplicationCategoryType: public.app-category.photography
+        INFOPLIST_KEY_NSPhotoLibraryUsageDescription: 读取你授权的最近截图，在设备上识别重叠并拼成长图。你也可以不授权，改用系统选择器手动选择截图。
+        INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription: 将你确认导出的无水印长图保存到照片图库。
+        INFOPLIST_FILE: Kaka/Info.plist
+        INFOPLIST_KEY_UIApplicationSceneManifest_Generation: YES
+        INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone: UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight
+        INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad: UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight
+        MARKETING_VERSION: "0.1.0"
+        CURRENT_PROJECT_VERSION: "2"
+        CODE_SIGN_STYLE: Automatic
+  KakaTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: KakaTests
+    dependencies:
+      - target: Kaka
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.example.kaka.tests
+        SWIFT_DEFAULT_ACTOR_ISOLATION: nonisolated
+        GENERATE_INFOPLIST_FILE: YES
+schemes:
+  Kaka:
+    build:
+      targets:
+        Kaka: all
+        KakaTests: [test]
+    test:
+      targets:
+        - KakaTests

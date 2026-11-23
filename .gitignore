@@ -1,0 +1,30 @@
+# macOS
+.DS_Store
+
+# Xcode user-specific settings
+xcuserdata/
+*.xcuserstate
+*.xccheckout
+*.xcscmblueprint
+
+# Xcode build artifacts
+build/
+DerivedData/
+*.ipa
+*.dSYM
+*.dSYM.zip
+
+# Swift Package Manager
+.swiftpm/xcode/package.xcworkspace/xcuserdata/
+.build/
+
+# Temporary files
+*.log
+*.tmp
+
+# Local secrets
+.env
+.env.*
+!.env.example
+*.p12
+*.mobileprovision
