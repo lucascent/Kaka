@@ -210,6 +210,14 @@ public actor PhotoLibraryService: PhotoLibraryProviding {
 
     private func cancelDiscoveryRequest(_ id: PHImageRequestID) { discoveryManager.cancelImageRequest(id) }
 
+    public func discoveryRowProbe(for asset: ScreenshotAsset) async -> DiscoveryRowProbe? {
+        guard permissions().read.canRead, asset.size.height <= 32_768,
+              let pixels = asset.size.pixelCount, pixels <= 32_000_000,
+              let item = PHAsset.fetchAssets(withLocalIdentifiers: [asset.id], options: nil).firstObject,
+              let image = await discoveryImage(for: item, target: PHImageManagerMaximumSize) else { return nil }
+        return try? DiscoveryRowProbe(image: image, original: asset.size)
+    }
+
     public func thumbnail(for asset: ScreenshotAsset, maxDimension: Int) async -> CGImage? {
         guard maxDimension > 0, permissions().read.canRead else { return nil }
         let fetched = PHAsset.fetchAssets(withLocalIdentifiers: [asset.id], options: nil)

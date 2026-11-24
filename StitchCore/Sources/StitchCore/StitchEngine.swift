@@ -18,14 +18,13 @@ public struct StitchEngine: Sendable {
             throw StitchFailure(.invalidImage, detail: "Source identifiers must be unique.")
         }
         let steps = inputs.count * 2 - 1
-        var signatures: [RowSignature] = []
-        signatures.reserveCapacity(inputs.count)
-        for (index, input) in inputs.enumerated() {
-            try Task.checkCancellation()
-            let signature = try autoreleasepool { try RowSignature(read(input)) }
-            signatures.append(signature)
-            progress?(ProcessingProgress(stage: .analyzing, completed: index + 1, total: steps))
+        let concurrency = inputs.allSatisfy { $0.size.allowsParallelDecode } ? 2 : 1
+        let results = await boundedSettledResults(count: inputs.count, concurrency: concurrency, onCompletion: { done in
+            progress?(ProcessingProgress(stage: .analyzing, completed: done, total: steps))
+        }) { index in
+            Result { try autoreleasepool { try RowSignature(read(inputs[index])) } }
         }
+        let signatures = try results.map { try $0.get() }
 
         var order = Array(inputs.indices)
         if autoOrder, Set(signatures.map(\.width)).count == 1, !isNaturalOrder(signatures, inputs, exclusions) {
@@ -194,23 +193,29 @@ public struct StitchEngine: Sendable {
             ?? MatchExclusion(top: matcher.staticTop, bottom: matcher.staticBottom)
         let secondMask = exclusions[inputs[second].id]
             ?? MatchExclusion(top: matcher.staticTop, bottom: matcher.staticBottom)
-        var extra = try shortlist(upper, lower, firstMask, secondMask)
-        extra += try shortlist(lower, upper, secondMask, firstMask).map { -$0 }
+        let extra = try shortlist(upper, lower, firstMask, secondMask)
         let tolerant = matcher.relate(allowAbove: true, extraCandidates: extra)
         if case .unresolved = tolerant { return (exact, matcher) }
         return (tolerant, matcher)
     }
 
-    /// Candidate offsets of `lower` below `upper` from multi-band row descriptors.
+    /// Both reading directions share the same gray/edge planes and row descriptors.
     private func shortlist(_ upper: RasterImage, _ lower: RasterImage,
                            _ upperMask: MatchExclusion, _ lowerMask: MatchExclusion) throws -> [Int] {
         let first = try MatchPlane(upper)
         let second = try MatchPlane(lower)
         let masks = [(upperMask, first.height), (lowerMask, second.height)]
         guard masks.allSatisfy({ $0.0.top + $0.0.bottom < $0.1 - 16 }) else { return [] }
-        let minimumOverlap = max(24, min(first.height, second.height) / 40)
         let a = try RowDescriptor(plane: first, exclusion: upperMask, sourceWidth: upper.width)
         let b = try RowDescriptor(plane: second, exclusion: lowerMask, sourceWidth: lower.width)
+        let minimumOverlap = max(12, Int(ceil(8 / a.scale)))
+        let forward = try refinedOffsets(first, second, a, b, upperMask, lowerMask, minimumOverlap)
+        let backward = try refinedOffsets(second, first, b, a, lowerMask, upperMask, minimumOverlap)
+        return forward + backward.map { -$0 }
+    }
+
+    private func refinedOffsets(_ first: MatchPlane, _ second: MatchPlane, _ a: RowDescriptor, _ b: RowDescriptor,
+                                _ upperMask: MatchExclusion, _ lowerMask: MatchExclusion, _ minimumOverlap: Int) throws -> [Int] {
         let coarse = try RowMatcher.coarse(a, b, minimumOverlap: minimumOverlap)
         let radius = max(8, Int((2 / a.scale).rounded(.up)) + 2)
         var checked = Set<Int>()

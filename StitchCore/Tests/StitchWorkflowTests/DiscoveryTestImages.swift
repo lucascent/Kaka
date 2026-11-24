@@ -7,7 +7,7 @@ import StitchWorkflow
 enum DiscoveryTestImages {
     static let size = PixelSize(width: 96, height: 224)
 
-    static func raster(_ asset: ScreenshotAsset) throws -> RasterImage {
+    static func raster(_ asset: ScreenshotAsset, scrollStep: Int? = nil) throws -> RasterImage {
         let name = asset.id.prefix { !$0.isNumber }
         let frame = Int(asset.id.dropFirst(name.count)) ?? 0
         let document = name.utf8.reduce(UInt32(19)) { ($0 &* 31) &+ UInt32($1) }
@@ -15,7 +15,7 @@ enum DiscoveryTestImages {
         var bytes = [UInt8](repeating: 255, count: w * h * 4)
         for y in 0..<h {
             let fixed = y < h / 8 || y >= h - h / 10
-            let row = fixed ? y : y + frame * (h / 3)
+            let row = fixed ? y : y + frame * (scrollStep ?? (h / 3))
             var state = (fixed ? 71 : document) &+ UInt32(row) &* 747796405
             for x in 0..<w {
                 state = state &* 1664525 &+ 1013904223
@@ -27,8 +27,8 @@ enum DiscoveryTestImages {
         return try RasterImage(width: w, height: h, rgba: bytes)
     }
 
-    static func thumbnail(_ asset: ScreenshotAsset) -> CGImage? {
-        guard let image = try? raster(asset),
+    static func thumbnail(_ asset: ScreenshotAsset, scrollStep: Int? = nil) -> CGImage? {
+        guard let image = try? raster(asset, scrollStep: scrollStep),
               let provider = CGDataProvider(data: Data(image.rgba) as CFData) else { return nil }
         return CGImage(width: image.width, height: image.height, bitsPerComponent: 8, bitsPerPixel: 32,
                        bytesPerRow: image.width * 4, space: CGColorSpaceCreateDeviceRGB(),

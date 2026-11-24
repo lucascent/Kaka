@@ -5,6 +5,19 @@ import Testing
 @testable import StitchCore
 
 struct DiscoveryFixtureTests {
+    @Test func nativeVotesRecoverFromAThumbnailThatSuggestsTheWrongDirection() throws {
+        let fixture = try SyntheticFixture(positions: [0, 424])
+        defer { fixture.cleanUp() }
+        let upper = try NativeScrollFrame(fixture.inputs[0])
+        let lower = try NativeScrollFrame(fixture.inputs[1])
+        let result = try upper.verify(.scroll(offset: -67, radius: 4), to: lower)
+        guard case .aligned(false, let alignment, _) = result else {
+            Issue.record("Expected the matching rows in the originals to recover the forward scroll")
+            return
+        }
+        #expect(alignment.offsetY == 424)
+    }
+
     @Test(arguments: ["article", "chat", "list"])
     func thumbnailOffsetsVerifyAtOriginalResolution(in scene: String) throws {
         let folder = ScenarioTests.fixtures.appendingPathComponent(scene)

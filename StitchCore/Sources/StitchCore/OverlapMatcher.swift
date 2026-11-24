@@ -42,20 +42,22 @@ enum PairFinding: Sendable {
 
 /// Finds how two screenshots overlap from whole-row agreement.
 ///
-/// Every candidate offset is checked row by row. A candidate only counts when the agreeing
-/// rows reach both edges of the overlap (allowing for status, navigation, tab and input
-/// bars), so look-alike rows in repetitive layouts cannot produce a partial, wrong match.
+/// Checks the scrolling body row by row. Unique row positions can also establish a cut
+/// around a localized change, inside a stretch where both frames agree.
 struct OverlapMatcher {
     let first: RowSignature
     let second: RowSignature
     let firstMask: MatchExclusion
     let secondMask: MatchExclusion
+    let requestedFirstMask: MatchExclusion
+    let requestedSecondMask: MatchExclusion
     /// Tolerant comparison for re-encoded screenshots; nil compares exact pixels.
     var comparator: (forward: RowComparator, backward: RowComparator)?
 
     /// Rows that stay identical at the same position at the top and bottom of both images.
     let staticTop: Int
     let staticBottom: Int
+    let stationary: (top: Int, bottom: Int)
     let minimumEvidence: Int
 
     init(_ first: RowSignature, _ second: RowSignature,
@@ -63,8 +65,11 @@ struct OverlapMatcher {
          excludingFixedBands: Bool = false) {
         self.first = first
         self.second = second
+        requestedFirstMask = firstMask
+        requestedSecondMask = secondMask
         let bands = Self.staticBands(first, second)
-        let bodyMask = MatchExclusion(top: bands.top, bottom: bands.bottom)
+        stationary = Self.stationaryEdges(first, second, inferred: bands)
+        let bodyMask = MatchExclusion(top: stationary.top, bottom: stationary.bottom)
         self.firstMask = excludingFixedBands ? bodyMask : firstMask
         self.secondMask = excludingFixedBands ? bodyMask : secondMask
         staticTop = bands.top
@@ -82,6 +87,7 @@ struct OverlapMatcher {
             }
         }
         let duplicate = duplicateEvidence()
+        if duplicate == nil, comparator == nil, let anchored = distinctiveRelation(allowAbove: allowAbove) { return anchored }
 
         var offsets = useRowVotes ? Self.votedOffsets(first, second) : []
         for extra in extraCandidates where !offsets.contains(extra) { offsets.append(extra) }
@@ -197,7 +203,7 @@ struct OverlapMatcher {
         func isFixed(_ a: RowSignature, _ aRow: Int, _ b: RowSignature) -> Bool {
             if aRow < a.height * 3 / 40 || aRow >= a.height - a.height / 50 { return true }
             guard aRow < b.height else { return false }
-            return a.hashes[aRow] == b.hashes[aRow] || a.edgeHashes[aRow] == b.edgeHashes[aRow]
+            return a.fixedRow(aRow, matches: b, at: aRow)
         }
         var headDisagreement = 0
         for y in start..<bestStart where states[y - start] == .mismatch {
@@ -212,7 +218,13 @@ struct OverlapMatcher {
         }
         let allowance = 4 + min(upper.height, lower.height) / 100
         let barLimit = min(upper.height, lower.height) / 2
-        let covers = headDisagreement <= allowance && tailDisagreement <= allowance
+        // A repeated line can fill most of a very short overlap. Contradictory pixels
+        // elsewhere in that strip disqualify it, even if they have little horizontal texture.
+        let bodyStart = max(start, upperMask.top, offset + max(stationary.top, lowerMask.top))
+        let bodyEnd = min(end, upper.height - max(stationary.bottom, upperMask.bottom), offset + lower.height - lowerMask.bottom)
+        let shortBody = bodyEnd - bodyStart <= min(256, min(upper.height, lower.height) / 6)
+        let agreesInBody = !shortBody || (bodyStart < bodyEnd && !states[(bodyStart - start)..<(bodyEnd - start)].contains(.mismatch))
+        let covers = agreesInBody && headDisagreement <= allowance && tailDisagreement <= allowance
             && bestStart - start <= barLimit + lowerMask.top && end - bestEnd <= barLimit + upperMask.bottom
         var disagreement = 0
         var runs = 0
@@ -237,8 +249,15 @@ struct OverlapMatcher {
     /// Prefers an empty row near the middle of the agreeing segment, away from its edges.
     private static func seam(in states: [RowState], start: Int, segment: Range<Int>) -> (row: Int, range: ClosedRange<Int>) {
         let guardRows = min(8, segment.count / 4)
-        let lower = segment.lowerBound + guardRows
+        var lower = segment.lowerBound + guardRows
         let upper = max(lower, segment.upperBound - guardRows - 1)
+        // Once the later image's changed copy has ended, an agreeing cut below it keeps
+        // the earlier version intact. Leave the guard against clipping a fixed bottom bar.
+        let interior = (lower - start)...(upper - start)
+        if let lastChange = states[interior].lastIndex(of: .mismatch),
+           states[(lastChange + 1)..<(upper - start + 1)].prefix(12).contains(.match) {
+            lower = start + lastChange + 1
+        }
         func isEqual(_ y: Int) -> Bool {
             let state = states[y - start]
             return state == .blankEqual || state == .match
@@ -310,7 +329,7 @@ struct OverlapMatcher {
                 let a = fromBottom ? first.height - 1 - k : k
                 let b = fromBottom ? second.height - 1 - k : k
                 guard !(first.isBlank(a) && second.isBlank(b)) else { continue }
-                if first.hashes[a] == second.hashes[b] || first.edgeHashes[a] == second.edgeHashes[b] {
+                if first.fixedRow(a, matches: second, at: b) {
                     lastEqual = k
                 } else {
                     mismatches += 1

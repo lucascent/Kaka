@@ -45,6 +45,7 @@ actor RecentScreenshotDiscovery {
     private struct Feature {
         let signature: DiscoverySignature
         let thumbnail: CGImage
+        var probe: DiscoveryRowProbe?
     }
     private let photos: any PhotoLibraryProviding
     private let directory: URL
@@ -80,6 +81,7 @@ actor RecentScreenshotDiscovery {
         }
         var published = 0
         var unavailable = Set<ScreenshotAsset>()
+        var missingProbes = Set<ScreenshotAsset>()
         for window in windows where window.assets.count >= 2 {
             let assets = window.assets
             var end = assets.count
@@ -94,10 +96,9 @@ actor RecentScreenshotDiscovery {
                             let missing = try await loadFeatures(batch, retaining: [pair.first, pair.second], token: token)
                             unavailable.formUnion(missing)
                         }
-                        if let a = features[pair.first], let b = features[pair.second] {
-                            let span = DiscoveryInterval("Adjacent thumbnail comparison")
-                            defer { span.end() }
-                            hints[pair] = try a.signature.relation(to: b.signature)
+                        if let hint = try await hint(for: pair, missingProbes: &missingProbes, token: token) {
+                            try check(token)
+                            hints[pair] = hint
                         }
                     }
                     if let hint = hints[pair], hint != .separate { continue }
@@ -135,6 +136,33 @@ actor RecentScreenshotDiscovery {
     private func check(_ token: UUID) throws {
         try Task.checkCancellation()
         guard request == token else { throw CancellationError() }
+    }
+
+    private func hint(for pair: Pair, missingProbes: inout Set<ScreenshotAsset>, token: UUID) async throws -> ScrollHint? {
+        guard let a = features[pair.first], let b = features[pair.second] else { return nil }
+        let hint: ScrollHint
+        do {
+            let span = DiscoveryInterval("Adjacent thumbnail comparison")
+            defer { span.end() }
+            hint = try a.signature.relation(to: b.signature)
+        }
+        guard hint == .separate, a.signature.wasDownsampled else { return hint }
+        guard !missingProbes.contains(pair.first), !missingProbes.contains(pair.second) else { return nil }
+        let detail = DiscoveryInterval("Native row probe")
+        defer { detail.end() }
+        let missing = [pair.first, pair.second].filter { features[$0]?.probe == nil }
+        await withTaskGroup(of: (ScreenshotAsset, DiscoveryRowProbe?).self) { group in
+            for asset in missing {
+                group.addTask { [photos] in (asset, await photos.discoveryRowProbe(for: asset)) }
+            }
+            for await (asset, probe) in group where token == request {
+                features[asset]?.probe = probe
+                if probe == nil { missingProbes.insert(asset) }
+            }
+        }
+        try check(token)
+        guard let first = features[pair.first]?.probe, let second = features[pair.second]?.probe else { return nil }
+        return first.relation(to: second)
     }
 
     private func loadFeatures(_ batch: [ScreenshotAsset], retaining adjacent: [ScreenshotAsset],
@@ -213,10 +241,15 @@ actor RecentScreenshotDiscovery {
             guard let first = originals[a], let second = originals[b], let hint = hints[key],
                   first.size == a.size, second.size == b.size else { relations.append(.separate); continue }
             do {
-                let upper: NativeScrollFrame
-                if let previous, previous.0 == a { upper = previous.1 }
-                else { upper = try NativeScrollFrame(first) }
-                let lower = try NativeScrollFrame(second)
+                let upper: NativeScrollFrame, lower: NativeScrollFrame
+                if let previous, previous.0 == a {
+                    upper = previous.1
+                    lower = try NativeScrollFrame(second)
+                } else {
+                    previous = nil
+                    (upper, lower) = try await NativeScrollFrame.loadPair(first, second)
+                    try check(token)
+                }
                 let relation = try upper.verify(hint, to: lower)
                 relations.append(relation)
                 verified[key] = relation

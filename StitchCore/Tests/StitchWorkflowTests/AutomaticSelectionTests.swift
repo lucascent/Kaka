@@ -13,6 +13,36 @@ import StitchCore
         }
     }
 
+    @Test(arguments: [1, 2, 8, 16, 0, -5])
+    func nativeRowsSurviveThumbnailDownsampling(overlap: Int) async throws {
+        let size = PixelSize(width: 528, height: 806)
+        let step = size.height - size.height / 8 - size.height / 10 - overlap
+        let assets = ["edge2", "edge1", "edge0"].enumerated().map { i, id in
+            ScreenshotAsset(id: id, size: size, createdAt: now.addingTimeInterval(Double(i - 3)))
+        }
+        let photos = LibraryPhotos(assets: assets, scrollStep: step)
+        let library = StitchLibrary(photoLibrary: photos)
+        await library.refresh(now: now)
+        if overlap <= 0 {
+            #expect(library.cards.isEmpty)
+            #expect(await photos.imports.isEmpty)
+            return
+        }
+        let card = try #require(library.cards.first)
+        let auto = try #require(card.session.analysis)
+        #expect(auto.reordered)
+        let picked = try await StitchEngine().analyze(Array(auto.inputs.reversed()))
+        for analysis in [auto, picked] {
+            #expect(analysis.pairs.map { $0.alignment?.offsetY } == [step, step])
+            let plan = try StitchPlanBuilder.build(analysis)
+            #expect(plan.size.height == size.height + 2 * step)
+            for pair in analysis.pairs {
+                let seam = try #require(pair.alignment?.seamY)
+                #expect((size.height - size.height / 10 - overlap...size.height - size.height / 10).contains(seam))
+            }
+        }
+    }
+
     @Test func fourMixedShotsOnlyImportTheLastPairAndReuseItOnRefresh() async throws {
         let assets = shots(["mail0", "settings0", "article0", "article1"])
         let photos = LibraryPhotos(assets: assets)

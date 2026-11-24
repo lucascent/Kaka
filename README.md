@@ -25,6 +25,7 @@ A long-screenshot stitcher for iPhone and iPad: take a few overlapping screensho
 ## Features
 
 - With Photos access, finds recent screenshots that belong to the same scrolling page and stitches them automatically; seams that cannot be aligned reliably are skipped
+- Matches very small overlaps using distinctive pixel rows, speeds up matching through parallel decoding and reuse of row features, and can preserve whole cards when content changes locally
 - Manual mode through the system photo picker: choose, reorder, crop and fine-tune seams, without granting access to the whole library
 - All processing on the device; PNG and JPEG export, no watermark
 - Save to Photos or share through the system share sheet; afterwards, optionally delete the source screenshots, with confirmation first

@@ -51,6 +51,7 @@ public protocol PhotoLibraryProviding: Sendable {
     func thumbnail(for asset: ScreenshotAsset, maxDimension: Int) async -> CGImage?
     /// Whole, local-only thumbnails for a short window of consecutive screenshots.
     func discoveryThumbnails(for assets: [ScreenshotAsset]) async -> [String: CGImage]
+    func discoveryRowProbe(for asset: ScreenshotAsset) async -> DiscoveryRowProbe?
     /// The caller explicitly obtains add access before invoking save.
     func save(_ files: [ExportedFile]) async throws
     /// Moves the given Photos assets to Recently Deleted. The system asks the person to confirm;
@@ -72,6 +73,10 @@ public extension PhotoLibraryProviding {
             images[asset.id] = await thumbnail(for: asset, maxDimension: max(size.width, size.height))
         }
         return images
+    }
+    func discoveryRowProbe(for asset: ScreenshotAsset) async -> DiscoveryRowProbe? {
+        guard let image = await thumbnail(for: asset, maxDimension: max(asset.size.width, asset.size.height)) else { return nil }
+        return try? DiscoveryRowProbe(image: image, original: asset.size)
     }
     func deleteAssets(_ identifiers: [String]) async throws -> Bool { throw StitchFailure(.permissionDenied) }
 }

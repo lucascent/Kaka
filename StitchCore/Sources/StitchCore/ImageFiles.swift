@@ -32,7 +32,13 @@ public enum ImageFiles {
         try Task.checkCancellation()
         let info = try sourceInfo(url)
         try validatePixels(info.size, maxPixels: maxPixels)
-        let image = try decodedImage(info, maximumDimension: max(info.size.width, info.size.height))
+        let image: CGImage
+        if info.isUprightPNG, let full = CGImageSourceCreateImageAtIndex(info.source, 0,
+            [kCGImageSourceShouldCacheImmediately: true] as CFDictionary) {
+            image = full
+        } else {
+            image = try decodedImage(info, maximumDimension: max(info.size.width, info.size.height))
+        }
         guard image.width == info.size.width, image.height == info.size.height else {
             throw StitchFailure(.invalidImage, detail: "Decoded image dimensions differ from metadata.")
         }
@@ -96,6 +102,7 @@ public enum ImageFiles {
     private struct SourceInfo {
         let source: CGImageSource
         let size: PixelSize
+        let isUprightPNG: Bool
     }
 
     private static func sourceInfo(_ url: URL) throws -> SourceInfo {
@@ -114,7 +121,8 @@ public enum ImageFiles {
         let size = (5...8).contains(orientation)
             ? PixelSize(width: height, height: width) : PixelSize(width: width, height: height)
         _ = try byteCount(width: size.width, height: size.height)
-        return SourceInfo(source: source, size: size)
+        let direct = orientation == 1 && CGImageSourceGetType(source) as String? == UTType.png.identifier
+        return SourceInfo(source: source, size: size, isUprightPNG: direct)
     }
 
     private static func validatePixels(_ size: PixelSize, maxPixels: Int) throws {
@@ -139,7 +147,8 @@ public enum ImageFiles {
         return image
     }
 
-    static func raster(_ image: CGImage, at size: PixelSize? = nil) throws -> RasterImage {
+    static func raster(_ image: CGImage, at size: PixelSize? = nil,
+                       interpolation: CGInterpolationQuality = .default) throws -> RasterImage {
         let width = size?.width ?? image.width
         let height = size?.height ?? image.height
         var bytes = [UInt8](repeating: 0, count: try byteCount(width: width, height: height))
@@ -153,6 +162,7 @@ public enum ImageFiles {
                 throw StitchFailure(.resourceLimitExceeded, detail: "Could not allocate the decode canvas.")
             }
             context.setBlendMode(.copy)
+            context.interpolationQuality = interpolation
             context.draw(image, in: CGRect(x: 0, y: 0, width: width, height: height))
         }
         // Core Graphics bitmap contexts store premultiplied channels. Fully opaque images

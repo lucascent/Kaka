@@ -66,18 +66,15 @@ struct ScenarioTests {
 
     /// Repetitive layouts used to report success with rows missing. Any accepted offset must be exact.
     @Test(arguments: ["chat", "article", "list"], [400, 200, 120, 80, 40])
-    func smallOverlapsAreExactOrRefused(scene name: String, overlap: Int) async throws {
+    func distinctiveSmallOverlapsMatchExactly(scene name: String, overlap: Int) async throws {
         let scene = try Scene(name)
         defer { scene.cleanUp() }
         let a = try scene.frame(scroll: 0, clock: 40)
         let b = try scene.frame(scroll: ScenarioTests.body - overlap, clock: 70)
         let analysis = try await StitchEngine().analyze([a, b])
         #expect(analysis.inputs.count == 2)
-        if let alignment = analysis.pairs.first?.alignment {
-            #expect(alignment.offsetY == ScenarioTests.body - overlap)
-        } else {
-            #expect(overlap <= 120, "A \(overlap) px overlap should be found")
-        }
+        let alignment = try #require(analysis.pairs.first?.alignment)
+        #expect(alignment.offsetY == ScenarioTests.body - overlap)
     }
 
     @Test(arguments: ["chat", "article", "list"])
@@ -106,6 +103,53 @@ struct ScenarioTests {
         // The seam must not cut through the changed block (rows 476..<596 of the lower image).
         let lowerRow = alignment.seamY - alignment.offsetY
         #expect(!(ScenarioTests.top + 300..<ScenarioTests.top + 420).contains(lowerRow))
+    }
+
+    @Test(arguments: [0, 170])
+    func keepsTheCompleteEarlierCardWhenItsClippedCopyChanges(changedStart: Int) async throws {
+        let scene = try Scene("article")
+        defer { scene.cleanUp() }
+        let scroll = 683
+        let changedEnd = Self.top + 490
+        let first = try scene.frame(scroll: 0)
+        let second = try scene.frame(scroll: scroll) { bytes, width in
+            for y in (Self.top + changedStart)..<changedEnd {
+                SyntheticFixture.fill(&bytes, width: width, x: 10, y: y, w: width - 20, h: 1,
+                                      color: [UInt8(y % 251), 74, 120, 255])
+            }
+        }
+        let third = try scene.frame(scroll: 1379)
+        let analysis = try await StitchEngine().analyze([first, second, third])
+        #expect(analysis.pairs.map { $0.alignment?.offsetY } == [683, 696])
+        let plan = try StitchPlanBuilder.build(analysis)
+        #expect(plan.slices[1].startY >= changedEnd)
+        let file = try #require(StitchRenderer().export(plan, to: scene.directory).first)
+        #expect(try ImageFiles.read(file.url).rgba == scene.expected.rgba)
+    }
+
+    @Test(arguments: [16, 24])
+    func recurringBubblesCannotReverseAShortChatOverlap(overlap: Int) async throws {
+        let scene = try Scene("chat")
+        defer { scene.cleanUp() }
+        let offset = Self.body - overlap
+        let shots = try [0, offset].map { try scene.frame(scroll: $0) }
+        let analysis = try await StitchEngine().analyze(shots)
+        #expect(analysis.inputs == shots)
+        if let alignment = analysis.pairs.first?.alignment { #expect(alignment.offsetY == offset) }
+    }
+
+    @Test func changedStatusIconDoesNotHideASingleDistinctiveTextRow() async throws {
+        let scene = try Scene("article")
+        defer { scene.cleanUp() }
+        let offset = Self.body - 1
+        let a = try scene.frame(scroll: 0)
+        let b = try scene.frame(scroll: offset) { bytes, width in
+            SyntheticFixture.fill(&bytes, width: width, x: 47, y: 26, w: 18, h: 21, color: [230, 91, 15, 255])
+        }
+        let analysis = try await StitchEngine().analyze([a, b])
+        let alignment = try #require(analysis.pairs.first?.alignment)
+        #expect(alignment.offsetY == offset)
+        #expect(alignment.seamY == Self.height - Self.bottom - 1)
     }
 
     @Test(arguments: ["chat", "article", "list"])

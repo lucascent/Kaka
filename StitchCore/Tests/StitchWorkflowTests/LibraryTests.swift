@@ -11,15 +11,17 @@ actor LibraryPhotos: PhotoLibraryProviding {
     private(set) var deleted: [String] = []
     private(set) var imports: [[String]] = []
     private(set) var thumbnailIDs: [String] = []
+    let scrollStep: Int?
     var replacements: [String: String] = [:]
     var missing: Set<String> = []
     var unavailableOriginals: Set<String> = []
     func setUnavailableOriginals(_ ids: Set<String>) { unavailableOriginals = ids }
     func replaceOriginal(_ id: String, with other: String) { replacements[id] = other }
     func setMissing(_ ids: Set<String>) { missing = ids }
-    init(read: PhotoAccess = .authorized, assets: [ScreenshotAsset],
+    init(read: PhotoAccess = .authorized, assets: [ScreenshotAsset], scrollStep: Int? = nil,
          maximumBatchEncodedBytes: Int = ScreenshotGrouping.maximumBatchEncodedBytes) {
         self.maximumBatchEncodedBytes = maximumBatchEncodedBytes
+        self.scrollStep = scrollStep
         access = PhotoPermissions(read: read, add: .authorized); self.assets = assets
     }
     func setAssets(_ assets: [ScreenshotAsset]) { self.assets = assets }
@@ -29,7 +31,7 @@ actor LibraryPhotos: PhotoLibraryProviding {
     func recentScreenshots(since: Date, limit: Int) -> [ScreenshotAsset] { Array(assets.prefix(limit)) }
     func thumbnail(for asset: ScreenshotAsset, maxDimension: Int) -> CGImage? {
         thumbnailIDs.append(asset.id)
-        return missing.contains(asset.id) ? nil : DiscoveryTestImages.thumbnail(asset)
+        return missing.contains(asset.id) ? nil : DiscoveryTestImages.thumbnail(asset, scrollStep: scrollStep)
     }
     func importAssets(_ assets: [ScreenshotAsset], to directory: URL, progress: ProgressHandler?) throws -> [ScreenshotInput] {
         imports.append(assets.map(\.id))
@@ -37,7 +39,7 @@ actor LibraryPhotos: PhotoLibraryProviding {
         return try assets.map { asset in
             let url = directory.appendingPathComponent(UUID().uuidString + ".png")
             let content = ScreenshotAsset(id: replacements[asset.id] ?? asset.id, size: asset.size, createdAt: asset.createdAt)
-            try ImageFiles.write(DiscoveryTestImages.raster(content), to: url)
+            try ImageFiles.write(DiscoveryTestImages.raster(content, scrollStep: scrollStep), to: url)
             return ScreenshotInput(fileURL: url, size: asset.size, createdAt: asset.createdAt)
         }
     }
